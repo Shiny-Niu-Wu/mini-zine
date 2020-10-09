@@ -1,1 +1,117 @@
-<p>hello</p>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>The GEN-Zine</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script type="text/javascript" src="/js/script.js"></script>
+
+  </head>
+  <body>
+    <p id="headerTitle">[GENZine]</p>
+
+    <p id="question">fun knowledge loading...</p>
+
+
+    <!-- generate another question -->
+    <button id="questionGenerateButton" type="button" name="button">GIMME MORE!!!</button>
+    <p>scroll down please</p>
+
+
+
+      <!-- setting currently restricted to wiki searches -->
+      <!-- google searchbar -->
+          <!-- <script async src="https://cse.google.com/cse.js?cx=20bedf6a0f7f935fa"></script> -->
+          <!-- <div class="gcse-searchbox"></div>
+          <div class="gcse-searchresults" data-defaultToImageSearch="true" data-disableWebSearch="true" data-resultSetSize="1" data-searchresults-only="true"></div> -->
+
+    <div id="test">
+
+    </div>
+
+    <!-- <div id="sliced_question_and_answer_group"></div> -->
+
+    <div id="wrong_answers_group"></div>
+
+
+
+    <!-- <div id="test"></div> -->
+
+    <div id="zinePages_group">
+          <div id="page1" class="zinePage">
+            <p>1</p>
+            <div id="pageContent1"></div>
+            <div id="pageImage1"></div>
+          </div>
+          <div id="page2" class="zinePage">
+            <p>2</p>
+            <div id="pageContent2"></div>
+            <div id="pageImage2"></div>
+          </div>
+          <div id="page3" class="zinePage">
+            <p>3</p>
+            <div id="pageContent3"></div>
+            <div id="pageImage3"></div>
+          </div>
+          <div id="page4" class="zinePage">
+            <p>4</p>
+            <div id="pageContent4"></div>
+            <div id="pageImage4"></div>
+          </div>
+          <div id="page5" class="zinePage">
+            <p>5</p>
+            <div id="pageContent5"></div>
+            <div id="pageImage5"></div>
+          </div>
+          <div id="page6" class="zinePage">
+            <p>6</p>
+            <div id="pageContent6"></div>
+            <div id="pageImage6"></div>
+          </div>
+          <div id="page7" class="zinePage">
+            <p>7</p>
+            <div id="pageContent7"></div>
+            <div id="pageImage7"></div>
+          </div>
+          <div id="page8" class="zinePage">
+            <p>8</p>
+            <div id="pageContent8"></div>
+            <div id="pageImage8"></div>
+          </div>
+    </div>
+
+    <div id="content"></div>
+    <script>
+      function hndlr(response) {
+        var item = response.items[0];
+        // in production code, item.htmlTitle should have the HTML entities escaped.
+        // document.getElementById("content").innerHTML += "<img src='" + item.link + "'></img>";
+        var newImage = document.createElement("img");
+        newImage.src = item.link;
+        newImage.setAttribute("id", "newImage_searched");
+        document.getElementById("content").appendChild(newImage);
+
+        // const cx = '20bedf6a0f7f935fa' // search engine id
+        // const apikey = 'AIzaSyAC1cc3SDObtjmdSmE2g8aKN1z8GexS4Wo' // api key
+        //var q = 'car';
+        // let googleSearch = fetch(`https://www.googleapis.com/customsearch/v1?q=${q}&searchType=image&key=${apikey}&cx=${cx}&callback=hndlr`)
+      }
+    </script>
+    <script src="https://www.googleapis.com/customsearch/v1?q=conceptualart&searchType=image&key=AIzaSyAClcc3SDObtjmdSmE2g8akN1z8GexS4Wo&cx=20bedf6a0f7f935fa&callback=hndlr">
+    </script>
+
+    <a class="btn btn-success" href="javascript:void(0);" onclick="generate();">
+      <button type="button" name="getPictureButton" id="getPictureButton">Download Zine!</button>
+    </a>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <!-- <script src="js/sliding-puzzle.js"></script> -->
+  </body>
+</html>
